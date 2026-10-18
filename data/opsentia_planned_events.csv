@@ -1,0 +1,2 @@
+event_id,queue,start_at,end_at,event_type,planned,known_to_forecaster,additional_staffing,source
+EV-20260815-A,Queue A,2026-08-15 14:00:00,2026-08-15 19:00:00,planned_marketing_campaign,1,1,17,SYNTHETIC_FIXTURE

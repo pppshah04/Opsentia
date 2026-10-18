@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="270" viewBox="0 0 1050 270" role="img" aria-label="Opsentia logo and Intelligence That Anticipates tagline">
+<rect width="1050" height="270" rx="28" fill="#071325"/>
+<g transform="translate(28 44) scale(1.38)"><defs><linearGradient id="opsGradient" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#8C6AFF"/><stop offset="52%" stop-color="#338DFF"/><stop offset="100%" stop-color="#21D9C9"/></linearGradient></defs>
+<g transform="translate(13 13)">
+  <path d="M75 14 A44 44 0 1 0 100 68" fill="none" stroke="url(#opsGradient)" stroke-width="16" stroke-linecap="round"/>
+  <path d="M92 21 L110 28 L94 42" fill="none" stroke="#2DDACF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M45 75 C56 58 69 48 87 45" fill="none" stroke="url(#opsGradient)" stroke-width="9" stroke-linecap="round" opacity=".82"/>
+  <circle cx="87" cy="45" r="5.2" fill="#E4FDFF"/>
+</g></g>
+<text x="238" y="128" fill="#F2F7FF" font-family="Inter,Manrope,Segoe UI,Arial,sans-serif" font-size="83" font-weight="750" letter-spacing="-3">Opsentia</text>
+<text x="242" y="180" fill="#A9B9CF" font-family="Inter,Manrope,Segoe UI,Arial,sans-serif" font-size="27" font-weight="500" letter-spacing=".35">Intelligence That Anticipates.</text>
+<path d="M242 207 H365" stroke="#5FB3F9" stroke-width="4" stroke-linecap="round"/>
+</svg>

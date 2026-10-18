@@ -1,0 +1,14 @@
+check_name,violations,result,rule,data_origin
+CONTACT_FLOW_CONSERVATION_INCLUDING_BACKLOG,0,PASS,offered_calls+opening_backlog=answered_calls+abandoned_calls+closing_backlog,RECOMPUTED_LOCAL_VALIDATION
+BACKLOG_FLOW_CONSERVATION,0,PASS,opening_backlog+added-cleared=closing_backlog,RECOMPUTED_LOCAL_VALIDATION
+SLA_MET_LE_ANSWERED,0,PASS,sla_met_calls <= answered_calls,RECOMPUTED_LOCAL_VALIDATION
+SLA_RATIO_WITHIN_ROUNDING,0,PASS,sla approximately sla_met_calls/answered_calls,RECOMPUTED_LOCAL_VALIDATION
+STAFFING_GAP_IDENTITY,0,PASS,staffing_gap=available_agents-required_agents,RECOMPUTED_LOCAL_VALIDATION
+RATIOS_BOUNDED,0,PASS,"fractions in [0,1]",RECOMPUTED_LOCAL_VALIDATION
+INCIDENT_ACTION_FOREIGN_KEY,0,PASS,action incident_id is in incident register,RECOMPUTED_LOCAL_VALIDATION
+INCIDENT_NOTIFICATION_FOREIGN_KEY,0,PASS,notification incident_id is in incident register,RECOMPUTED_LOCAL_VALIDATION
+HISTORICAL_COMPARATOR_NO_FUTURE,0,PASS,all same-slot comparators are prior timestamps,RECOMPUTED_LOCAL_VALIDATION
+HISTORICAL_MATCH_IS_PRIOR,0,PASS,matched incident must precede query incident,RECOMPUTED_LOCAL_VALIDATION
+SYNTHETIC_NOTIFICATION_DELIVERY_LABELED,0,PASS,no notifications labeled as real sends,RECOMPUTED_LOCAL_VALIDATION
+SCENARIO_OUTPUTS_LEFT_UNMODELED,0,PASS,scenario projections must wait for validated simulator,RECOMPUTED_LOCAL_VALIDATION
+FORECAST_NO_PROBABILITY_CLAIM,0,PASS,forecast baseline is not a calibrated probability,RECOMPUTED_LOCAL_VALIDATION

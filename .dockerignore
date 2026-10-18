@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.venv
+venv
+env
+.git
+.github
+*.log
+docs/demo_video/
+*.pptx
+*.zip

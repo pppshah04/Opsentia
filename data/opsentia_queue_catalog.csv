@@ -1,0 +1,6 @@
+queue,team,channel,skill_group,sla_target,max_external_temporary_agents,temporary_agent_cost_usd_hour,config_source
+Queue A,New Accounts,Voice,New Accounts,0.9,10,30,SYNTHETIC_DEMO_RESOURCE_POLICY
+Queue B,Customer Service,Voice,Core Service,0.9,8,30,SYNTHETIC_DEMO_RESOURCE_POLICY
+Queue C,General Support,Voice,Core Service,0.9,8,30,SYNTHETIC_DEMO_RESOURCE_POLICY
+Support L2,Specialist Support,Voice,Specialist,0.9,4,42,SYNTHETIC_DEMO_RESOURCE_POLICY
+Retention,Retention,Voice,Retention,0.9,5,36,SYNTHETIC_DEMO_RESOURCE_POLICY

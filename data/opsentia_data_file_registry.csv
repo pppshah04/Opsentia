@@ -1,0 +1,27 @@
+filename,grain,rows,origin,notes
+synthetic_operations.csv,30 minutes x queue,"43,680",SOURCE,Observed synthetic operational series
+opsentia_all_queues_30min.csv,30 minutes across queues,"8,736",DERIVED,Source all-queue aggregate
+opsentia_daily_kpis.csv,calendar day x queue,"1,092",DERIVED,Daily aggregate
+opsentia_incidents.csv,incident,23,GENERATED,Synthetic incident windows
+opsentia_actions.csv,action,24,GENERATED,Synthetic actions and observed timeline changes without causal claims
+opsentia_notification_events.csv,notification event,88,GENERATED,Simulated deliveries/suppressions only
+opsentia_planned_events.csv,business event,1,GENERATED,Synthetic planned campaign
+synthetic_operations_legacy_columns.csv,30 minutes x queue,"43,680",DERIVED,Compatibility fields
+opsentia_action_activity_log.csv,reference/event or incident,66,GENERATED_OR_DERIVED,Refer to data_origin/source columns in CSV
+opsentia_data_file_registry.csv,reference/event or incident,22,GENERATED_OR_DERIVED,Refer to data_origin/source columns in CSV
+opsentia_data_integrity_checks.csv,reference/event or incident,12,GENERATED_OR_DERIVED,Refer to data_origin/source columns in CSV
+opsentia_decision_outcome_ledger.csv,reference/event or incident,24,GENERATED_OR_DERIVED,Refer to data_origin/source columns in CSV
+opsentia_decision_scenario_inputs.csv,reference/event or incident,92,GENERATED_OR_DERIVED,Refer to data_origin/source columns in CSV
+opsentia_escalation_matrix.csv,reference/event or incident,9,GENERATED_OR_DERIVED,Refer to data_origin/source columns in CSV
+opsentia_forecast_backtest.csv,timestamp x queue x horizon,131010,GENERATED_OR_DERIVED,Refer to data_origin/source columns in CSV
+opsentia_historical_incident_matches.csv,reference/event or incident,63,GENERATED_OR_DERIVED,Refer to data_origin/source columns in CSV
+opsentia_incident_evidence.csv,reference/event or incident,161,GENERATED_OR_DERIVED,Refer to data_origin/source columns in CSV
+opsentia_incident_notification_summary.csv,reference/event or incident,23,GENERATED_OR_DERIVED,Refer to data_origin/source columns in CSV
+opsentia_incident_state_timeline.csv,incident x timestamp,372,GENERATED_OR_DERIVED,Refer to data_origin/source columns in CSV
+opsentia_knowledge_catalog.csv,reference/event or incident,7,GENERATED_OR_DERIVED,Refer to data_origin/source columns in CSV
+opsentia_metric_baselines_30min.csv,30 minutes x queue,43680,GENERATED_OR_DERIVED,Refer to data_origin/source columns in CSV
+opsentia_metric_policies.csv,reference/event or incident,13,GENERATED_OR_DERIVED,Refer to data_origin/source columns in CSV
+opsentia_monthly_kpis.csv,calendar month x queue,42,GENERATED_OR_DERIVED,Refer to data_origin/source columns in CSV
+opsentia_queue_catalog.csv,reference/event or incident,5,GENERATED_OR_DERIVED,Refer to data_origin/source columns in CSV
+opsentia_queue_transfer_rules.csv,reference/event or incident,20,GENERATED_OR_DERIVED,Refer to data_origin/source columns in CSV
+opsentia_weekly_kpis.csv,ISO week x queue,156,GENERATED_OR_DERIVED,Refer to data_origin/source columns in CSV

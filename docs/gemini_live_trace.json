@@ -1,0 +1,56 @@
+{
+  "model_id": "gemini-flash-latest",
+  "investigation_status": "MODEL_SELECTED_TOOL_CALLS_VERIFIED",
+  "ai_mode": "GEMINI_LIVE",
+  "timestamp": "2026-10-18T17:00:40.325792",
+  "trace_id": "TRC-6444C91B0E0C",
+  "model_selected_tools_count": 3,
+  "tool_calls": [
+    {
+      "name": "get_current_metrics",
+      "arguments": {
+        "queue": "Queue A",
+        "as_of": "2026-09-13 16:30:00"
+      },
+      "result_id": "SRC-OPS-Queue A-2026-09-13 16:30:00",
+      "duration_ms": 8,
+      "status": "SUCCESS"
+    },
+    {
+      "name": "get_forecast",
+      "arguments": {
+        "queue": "Queue A",
+        "as_of": "2026-09-13 16:30:00"
+      },
+      "result_id": "SRC-FC-Queue A-2026-09-13 16:30:00",
+      "duration_ms": 48,
+      "status": "SUCCESS"
+    },
+    {
+      "name": "search_enterprise_policy",
+      "arguments": {
+        "query": "Queue A SLA breach capacity SOP",
+        "as_of": "2026-09-13 16:30:00"
+      },
+      "result_id": "SRC-POL-Queue A SL",
+      "duration_ms": 1,
+      "status": "SUCCESS"
+    }
+  ],
+  "grounding_source_ids": [
+    "SRC-OPS-Queue A-2026-09-13 16:30:00",
+    "SRC-FC-Queue A-2026-09-13 16:30:00",
+    "SRC-POL-Queue A SL"
+  ],
+  "executive_summary": "Incident EV-2026-0913-01 involves Queue A experiencing significant operational strain as of 2026-09-13 16:30:00. Current SLA has dropped to 80.5% against a 90.0% target, accompanied by an elevated abandon rate of 8.6% and agent occupancy at 91.7%. There is an immediate staffing deficit of 11 agents (53 available vs. 64 required) handling 314 offered calls with an AHT of 304.8 seconds.",
+  "hypotheses": [
+    {
+      "label": "Primary Adverse Driver",
+      "status": "UNKNOWN",
+      "evidence_ids": [
+        "SRC-OPS-Queue A-2026-09-13 16:30:00"
+      ],
+      "limitations": "INSUFFICIENT_EVIDENCE: No hypotheses evaluated."
+    }
+  ]
+}
