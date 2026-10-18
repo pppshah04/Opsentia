@@ -1,190 +1,276 @@
-# Opsentia — Intelligence That Anticipates.
+<div align="center">
 
-**Team:** VYRA  
-**Challenge:** Google Cloud AI Builder Cup 2026  
-**Track:** Future of Work & Enterprise Productivity  
-**Status:** Complete Functional Prototype (30/30 Unit Tests Passed, 100% Data Integrity Reconciled)  
+# Opsentia
 
----
+### Intelligence That Anticipates.
 
-## 1. Overview
-Traditional contact center and operations dashboards only tell managers what already went wrong. Chatbots offer ungrounded guesses. **Opsentia** connects predictive risk anticipation to evidence-grounded AI investigations, constrained decision simulations, and human-in-the-loop governance.
+**An AI-assisted operational decision-intelligence prototype by Team VYRA**  
+*Google Cloud AI Builder Cup 2026 · Future of Work & Enterprise Productivity*
 
-Opsentia continuously monitors multi-queue operational streams, anticipates SLA breaches before they occur, investigates underlying root causes using server-side Google AI tools, models alternate intervention scenarios with donor-queue guardrails, and records auditable human approvals and verified outcomes.
+**Anticipate risks · Investigate with evidence · Evaluate interventions · Keep humans in control**
 
----
-
-## 2. Core Architecture & Capabilities
-
-```
-  ┌─────────────────────────────────────────────────────────────┐
-  │                 7-Screen Desktop Application                │
-  │   Live Intelligence  •  All Metrics  •  Investigation       │
-  │   Decision Lab  •  Actions & Approvals  •  Notifications    │
-  │                   Historical Analytics                      │
-  └──────────────────────────────┬──────────────────────────────┘
-                                 │ REST API
-  ┌──────────────────────────────┴──────────────────────────────┐
-  │               FastAPI + Pydantic Backend Server             │
-  │                                                             │
-  │  ┌──────────────────┐  ┌────────────────┐  ┌─────────────┐  │
-  │  │   COIL Engine    │  │   Google AI    │  │  Decision   │  │
-  │  │ Predictive Lead  │  │ Orchestrator   │  │ Simulator   │  │
-  │  │ Baseline Windows │  │ 10 Typed Tools │  │  Erlang-C   │  │
-  │  │ Multi-Signal Lead│  │ Cited Evidence │  │ Donor Guard │  │
-  │  └─────────┬────────┘  └───────┬────────┘  └──────┬──────┘  │
-  │            │                   │                  │         │
-  │  ┌─────────┴───────────────────┴──────────────────┴──────┐  │
-  │  │        Incident Lifecycle & Human Approval Ledger     │  │
-  │  │    Authenticated Sign-off  •  60m Cooldown Matrix     │  │
-  │  └─────────────────────────────┬─────────────────────────┘  │
-  └────────────────────────────────┼────────────────────────────┘
-                                   │
-  ┌────────────────────────────────┴────────────────────────────┐
-  │         26 Authoritative Synthetic CSV Data Fixtures        │
-  │     43,680 30-min Intervals  •  5 Queues  •  910 Days       │
-  └─────────────────────────────────────────────────────────────┘
-```
-
-1. **Continuous Operations Intelligence Layer (COIL):**
-   - Zero future information leakage in temporal replay (`timestamp < as_of`).
-   - Intra-day velocity and multi-signal cross-queue correlation.
-   - **30-minute early warning lead time** before observed SLA floor breaches.
-2. **Google AI / Gemini Orchestrator:**
-   - Official `google-genai` SDK integration.
-   - **10 read-only typed analytical tools** (metrics, baselines, trends, capacity pressure, related signals, incident memory, policy search, forecasting, intervention simulation).
-   - Structured hypothesis evaluation (`SUPPORTED`, `CONTRADICTED`, `UNKNOWN`) backed by exact cited evidence IDs.
-   - Truthful fallback mode (`ai_mode: DETERMINISTIC_FALLBACK`) with zero fabricated hallucinations.
-3. **Constrained Decision Simulator:**
-   - Exact Erlang-C delay probability $C(c, A)$ and exponential queue service clearance.
-   - Strict delay monotonicity guarantee ($\text{SLA}(c+1) \ge \text{SLA}(c)$).
-   - **Donor-queue floor protection guardrails** preventing destabilization of donor operations.
-4. **Human Approval State Machine & Notification Ledger:**
-   - Mandatory authenticated human sign-off (`actor`, `role`, timestamp, notes).
-   - Strict transition validation (rejects illegal jumps); idempotent approval requests.
-   - Notification matrix routing with 60-minute deduplication cooldown window.
+</div>
 
 ---
 
-## 3. Project Structure
+## Overview
 
+Most operations dashboards explain **what has already happened**. **Opsentia** is designed to help operations leaders identify **what may happen next**, investigate the reasons, evaluate their options, and document accountable decisions.
+
+The prototype combines a deterministic **Continuous Operational Intelligence Loop (COIL)**, historical and full-day forecasts, **Google Gemini**-assisted investigations, conversational analytics, constrained scenario modeling, and human-controlled demonstration workflows. It is a **synthetic-data research prototype**, not a connected production workforce-management platform.
+
+### At a glance
+
+| Area | Prototype scope |
+| --- | --- |
+| Operational data | 26 synthetic CSV datasets |
+| Primary history | 43,680 queue-interval records; five queues; 182 days |
+| Analytics | Intraday, daily, weekly, monthly; queue-level and combined views |
+| Predictive intelligence | COIL alerts, historical comparisons, full-day KPI forecasts and watch-outs |
+| Google AI | Google Gen AI SDK, Gemini-assisted tool-based investigation and Ask Opsentia |
+| Decision support | Hypothetical staffing/capacity interventions with donor-queue constraints |
+| Governance | Demo-mode approvals, notifications, incident history and audit trail |
+| Interface | Seven desktop workspaces plus an AI chat assistant |
+
+> **Evidence and limitations:** Operational data, incidents and actions are synthetic or simulated. Forecasts and scenario projections are estimates, not guaranteed outcomes. Gemini requires explicit credentials and may use a labeled deterministic fallback when unavailable. Live Gemini execution and public Cloud Run deployment must be verified in the target environment; the presence of code or saved traces does not independently prove either.
+
+## Product experience
+
+![Opsentia Live Intelligence](docs/screenshots/01_live_intelligence.png)
+
+### Seven integrated workspaces
+
+| Workspace | Purpose |
+| --- | --- |
+| **1. Live Intelligence** | Monitor current/replayed KPIs, COIL signals, risk severity and active incidents. |
+| **2. All Metrics** | Review intraday, daily, weekly and monthly performance, historical comparisons, full-day forecasts and watch-outs. |
+| **3. Investigation** | Examine supporting metrics, competing explanations, historical incidents and AI investigation evidence. |
+| **4. Decision Lab** | Model hypothetical staffing interventions, compare trade-offs and assess donor-queue protections. |
+| **5. Actions & Approvals** | Review proposed actions and demo-mode approvals with auditable state changes. |
+| **6. Notifications** | Review severity-linked alerts, escalation records and duplicate-suppression information. |
+| **7. Historical Analytics** | Analyze longer-term trends, recurring incidents, historical KPI patterns and forecast performance. |
+
+**Ask Opsentia** is a cross-workspace conversational assistant for questions about operational data, forecasts, history and policies. It uses bounded server-side analytical tools where configured and should not be treated as an unrestricted source of operational facts.
+
+<details>
+<summary><strong>Additional interface screenshots</strong></summary>
+
+| All Metrics | Investigation |
+| --- | --- |
+| ![All Metrics](docs/screenshots/02_all_metrics.png) | ![Investigation](docs/screenshots/03_investigation.png) |
+
+| Decision Lab | Ask Opsentia |
+| --- | --- |
+| ![Decision Lab](docs/screenshots/04_decision_lab.png) | ![Ask Opsentia](docs/screenshots/08_opsentia_chat_drawer.png) |
+
+</details>
+
+## How it works
+
+```mermaid
+flowchart TD
+    A[26 synthetic operational datasets] --> B[FastAPI data and analytics services]
+    B --> C[COIL monitoring and historical baselines]
+    B --> D[Full-day forecast and multi-horizon analytics]
+    C --> E{Meaningful risk or user investigation?}
+    D --> E
+    E -->|Yes| F[Gemini-assisted evidence retrieval and investigation]
+    E -->|No| G[Continue deterministic monitoring]
+    F --> H[Decision Lab: constrained hypothetical scenarios]
+    H --> I[Human review and demo authorization]
+    I --> J[Incident, action and notification records]
+    J --> K[Historical review and outcome comparison]
 ```
-opsentia-v2/
+
+**Separation of responsibilities:** Python services calculate KPI metrics, forecasts, anomaly signals, and intervention math. Gemini selects or uses supported analytical tools to investigate context and explain evidence. Human approval remains necessary for consequential actions.
+
+### COIL and proactive AI
+
+COIL analyzes incoming/replayed KPI observations and signals material deviations. The repository also includes an **opt-in Gemini supervision hook** in `backend/supervisor.py` with risk-change detection and cooldown logic. Its availability **does not mean a continuously running production scheduler or managed worker is deployed**. A real scheduler, durable event storage, monitoring and access control are needed for production operation.
+
+## Technology stack
+
+| Layer | Technology |
+| --- | --- |
+| Web experience | HTML, CSS, vanilla JavaScript and SVG charts |
+| API | Python 3.11+, FastAPI, Pydantic, Uvicorn |
+| Data and metrics | pandas, CSV replay fixtures, deterministic calculation services |
+| AI | Google Gemini using the `google-genai` SDK and tool/function calling |
+| Forecasting | Observed-to-date results plus historical patterns and remaining-interval projections |
+| Quality | pytest, data preflight checks, browser capture scripts |
+| Packaging | Docker; Google Cloud Run deployment target |
+| Local audit persistence | Demo JSON/event state (**not** a durable multi-instance database) |
+
+## Repository structure
+
+```text
+.
 ├── backend/
-│   ├── app.py                   # FastAPI application & API endpoints
-│   ├── business_metrics.py      # Strict weighted SLA, AHT, abandon, occupancy, WAPE
-│   ├── coil.py                  # Continuous Operations Intelligence Layer & early warning
-│   ├── agent.py                 # Google AI / Gemini orchestrator & 10 read-only tools
-│   ├── simulation.py            # Exact Erlang-C capacity model & donor guardrail
-│   └── incidents.py             # Incident state machine & human approval ledger
-├── data/
-│   └── synthetic/               # 26 authoritative synthetic operational CSV fixtures
-├── frontend/
-│   └── app/                     # Approved 7-screen desktop UI
-├── tests/
-│   ├── test_metrics.py          # Metric calculations & stock-flow conservation tests
-│   ├── test_coil.py             # Zero-leakage & early warning lead time tests
-│   ├── test_agent.py            # Gemini tool execution & injection defense tests
-│   ├── test_simulation.py       # Erlang-C capacity & monotonicity tests
-│   ├── test_incidents_approvals.py # Incident lifecycle & human approval tests
-│   └── test_visual_api.py       # UI bootstrap contract tests
+│   ├── app.py                   # FastAPI routes and web app
+│   ├── agent.py                 # Gemini investigation and analytical tools
+│   ├── assistant.py             # Ask Opsentia chatbot
+│   ├── analytics.py             # Multi-horizon metrics
+│   ├── business_metrics.py      # KPI definitions and aggregation
+│   ├── coil.py                  # COIL monitoring
+│   ├── forecast_service.py      # End-of-day forecasts and backtesting
+│   ├── supervisor.py            # Opt-in AI supervision trigger
+│   ├── simulation.py            # Staffing and donor-queue scenarios
+│   └── incidents.py             # Incidents, actions and approvals
+├── data/                        # 26 synthetic CSV fixtures and demo state
+├── frontend/app/
+│   ├── index.html
+│   └── assets/                  # App JS, stylesheet and branding
+├── docs/                        # Architecture, APIs, benchmark notes and screenshots
 ├── scripts/
-│   ├── preflight_data.py        # 43,680-row data reconciliation script
-│   ├── browser_test_and_capture.py # Playwright multi-viewport automated QA
-│   ├── record_demo_walkthrough.py  # Playwright automated 1080p demo video recorder
-│   └── update_presentation.py   # PowerPoint deck updater with live screenshots
-├── docs/
-│   ├── BENCHMARKS.md            # Comprehensive benchmark & provenance evidence
-│   ├── RELEASE_EVIDENCE.md      # Acceptance matrix across all release gates
-│   ├── DEMO_VIDEO_3_MINUTES.md  # 180-second demonstration script
-│   ├── screenshots/             # 25 authentic screenshots across 3 viewports
-│   └── demo_video/              # 1080p walkthrough video recording (32.6 MB)
-├── pitch/
-│   ├── Opsentia_Official_Template_Final.pptx # Updated pitch presentation deck
-│   └── Opsentia_Official_Template_Draft.pptx # Base presentation template
-├── qa/
-│   └── RELEASE_GATES.csv        # Gate acceptance matrix (RG-01 through RG-18)
-├── Dockerfile                   # Cloud Run container with dynamic ${PORT:-8080}
-├── requirements.txt             # Python dependencies
-└── README.md                    # Project documentation
+│   ├── preflight_data.py
+│   └── browser_test_and_capture.py
+├── tests/                       # Automated regression tests
+├── .github/workflows/ci.yml     # GitHub Actions test workflow
+├── .env.example                 # Configuration template (no secrets)
+├── Dockerfile
+├── requirements.txt
+└── README.md
 ```
 
----
+## Run locally
 
-## 4. Getting Started
+### Requirements
 
-### Prerequisites
-- Python 3.11+
-- Chrome or Chromium (for Playwright browser verification)
+- Python **3.11 or newer**
+- Windows PowerShell, macOS terminal or Linux shell
+- A modern desktop browser
+- An optional **Google Gemini API key** for actual model-generated responses
 
-### Installation
+### 1. Clone and install
+
 ```bash
-# Clone or navigate to the repository root
-cd opsentia-v2
-
-# Install dependencies
-pip install -r requirements.txt
+git clone https://github.com/YOUR_USERNAME/opsentia-ai.git
+cd opsentia-ai
+python -m pip install -r requirements.txt
 ```
 
-### Running Locally
+Replace `YOUR_USERNAME` with your GitHub username and ensure the repository has been created. Alternatively, extract the project ZIP and open a terminal in its root directory.
+
+### 2. Configure optional Gemini access
+
+Review `.env.example`. **The application reads environment variables directly; simply copying `.env.example` to `.env` does not automatically load it.**
+
+For **Windows PowerShell**:
+
+```powershell
+$env:GEMINI_API_KEY = "YOUR_GEMINI_API_KEY"
+$env:GEMINI_MODEL = "YOUR_SUPPORTED_GEMINI_MODEL_ID"
+$env:PUBLIC_DEMO_READ_ONLY = "true"
+```
+
+For **macOS / Linux**:
+
 ```bash
-# Start backend server (default Cloud Run port 8080, or port 8000)
-python -m uvicorn backend.app:app --host 127.0.0.1 --port 8080
+export GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
+export GEMINI_MODEL="YOUR_SUPPORTED_GEMINI_MODEL_ID"
+export PUBLIC_DEMO_READ_ONLY="true"
 ```
-Open your browser to `http://127.0.0.1:8080` (or `http://127.0.0.1:8000` if port 8000 is unallocated) to access the full 7-screen interactive application.
 
----
+Select a supported model enabled for your project. No API key is needed to inspect synthetic datasets or use deterministic analytics and fallback features. **Never commit actual credentials, `.env` files or operator tokens.**
 
-## 5. Verification & Testing
+### 3. Validate data and start the app
 
-### 1. Data Integrity Preflight
 ```bash
 python scripts/preflight_data.py
+python -m uvicorn backend.app:app --reload --port 8080
 ```
-*Reconciles all 26 synthetic CSV fixtures (43,680 records across 5 queues and 910 queue-days).*
 
-### 2. Automated Regression Unit Tests
+Open:
+
+- **Web dashboard:** http://127.0.0.1:8080/
+- **Interactive API documentation:** http://127.0.0.1:8080/docs
+- **Health/status:** http://127.0.0.1:8080/api/health
+
+For the synthetic incident demonstration, select **Queue A**, **September 13, 2026**, and the **16:30** replay interval.
+
+## Testing
+
+Run the built-in quality checks:
+
 ```bash
+python scripts/preflight_data.py
 python -m pytest -q
 ```
-*Executes all 30 automated test cases spanning business metrics, COIL, Gemini agent tools, Erlang-C simulations, and human approval state transitions. Result: **30 passed (100%)**.*
 
-### 3. Multi-Viewport Browser QA & Screenshot Capture
-```bash
-python scripts/browser_test_and_capture.py
-```
-*Launches headless Chromium across 1366×768, 1440×900, and 1920×1080 viewports, tests interactive investigation and approval workflows, verifies 0 console errors, and captures 25 authentic screenshots in `docs/screenshots/`.*
+The automated tests cover core analytics, COIL, API contracts, forecast logic, decision simulation, chat behavior and approval controls. A live Gemini integration test may skip without valid credentials. Passing the test suite **does not independently verify production security, model quality or deployment**.
 
-### 4. Demo Walkthrough Video Recording
+For a browser screenshot/capture check, inspect the prerequisites in `scripts/browser_test_and_capture.py` and run it against a locally available server.
+
+See [business and dataset contracts](docs/BUSINESS_LOGIC_AND_DATA.md), [forecast/COIL notes](docs/COIL_AND_FORECAST_ENGINE.md), and [API specification](docs/API_SPEC.md).
+
+## Useful API routes
+
+| Route | Method | Use |
+| --- | --- | --- |
+| `/api/health` | `GET` | Runtime mode and verification flags |
+| `/api/ui/bootstrap` | `GET` | Initial desktop dashboard data |
+| `/api/analytics` | `GET` | Multi-horizon performance analytics |
+| `/api/forecasts/full-day` | `GET` | Observed + projected end-of-day metrics |
+| `/api/forecasts/full-day/backtest` | `GET` | Historical forecast evaluations |
+| `/api/coil/snapshot` | `GET` | COIL operational signals |
+| `/api/coil/watchouts` | `GET` | Operational watch-outs |
+| `/api/investigate` | `POST` | Request evidence-based investigation |
+| `/api/assistant/chat` | `POST` | Conversational operational queries |
+| `/api/simulations` | `POST` | Model hypothetical interventions |
+| `/api/coil/supervisor/status` | `GET` | AI supervisor status |
+
+API behavior, authorization and request schemas are documented in `/docs` and [docs/API_SPEC.md](docs/API_SPEC.md). Model capabilities must be confirmed through a real server-side Gemini trace, not a canned response.
+
+## Run with Docker
+
 ```bash
-python scripts/record_demo_walkthrough.py
+docker build -t opsentia:demo .
+docker run --rm -p 8080:8080 -e PUBLIC_DEMO_READ_ONLY=true opsentia:demo
 ```
-*Generates a high-definition 1920×1080 automated video walkthrough saved to `docs/demo_video/opsentia_demo_walkthrough.webm`.*
+
+Then visit http://127.0.0.1:8080/.
+
+**Cloud Run** is the intended managed hosting target. Review [deployment instructions](docs/DEPLOYMENT_AND_SECURITY.md) before publishing. The deployment needs a real Google Cloud project, billing/permissions, secure secret injection and external smoke tests. This repository by itself does not verify that a public Cloud Run service exists.
+
+### Demo security posture
+
+- Public/demo access should remain **read-only** (`PUBLIC_DEMO_READ_ONLY=true`).
+- Mutation-capable sessions require a separately provided `OPSENTIA_OPERATOR_TOKEN`; **do not embed it in frontend code or public repository files**.
+- Read-only analytical endpoints are distinct from action/approval mutation endpoints.
+- Local JSON records and in-memory state are **not reliable cross-instance persistence**. Use an appropriate managed database and enterprise identity provider before production use.
+- The notification ledger is demonstrative; do not infer real SMS, email or Slack delivery from simulated statuses.
+
+## Data, benchmarks and limitations
+
+All operating records are **synthetic**. The 30-minute warning for Queue A on September 13 is an **illustrative replay event**, not a population-wide guarantee of detection lead time. Published example forecast errors should be interpreted as checkpoint-specific, not as generalized predictive accuracy. Models and uncertainty bands require out-of-sample calibration; capacity scenarios are hypothetical, and their projected uplift should not be claimed as causal proof.
+
+Keep temporal replay boundaries (`as_of`) respected when answering historical questions. Combined queue metrics require correct time-bucket aggregation, sums for staffing, and denominator-weighted KPI calculations. See [benchmark notes](docs/BENCHMARKS.md) and [data contracts](docs/DATA_CONTRACT.md).
+
+## Documentation
+
+- [System architecture](ARCHITECTURE.md)
+- [Product requirements](PRD.md)
+- [API specification](docs/API_SPEC.md)
+- [Google AI tool design](docs/GEMINI_ADK_TOOLS.md)
+- [COIL and forecasting](docs/COIL_AND_FORECAST_ENGINE.md)
+- [Decision simulation](docs/DECISION_SIMULATION.md)
+- [Security and deployment](docs/DEPLOYMENT_AND_SECURITY.md)
+- [Dataset reconciliation](docs/DATA_CONTRACT.md)
+- [Benchmarks](docs/BENCHMARKS.md)
+- [GitHub publication guide](docs/GITHUB_SETUP.md)
+
+## Project status
+
+Opsentia is a **functioning demonstration prototype** with read-only analysis, synthetic replay, AI integration pathways and simulated governance workflows. Real Gemini output depends on credentials and runtime availability. Public cloud deployment, durable event storage, enterprise authentication and claims of statistically calibrated prediction quality require separate verification.
+
+No production operating system is connected and no real staffing, customer, or financial action is executed by this demonstration.
 
 ---
 
-## 6. Deployment to Google Cloud Run
+<div align="center">
 
-Opsentia is containerized and ready for immediate deployment to Google Cloud Run:
+**Opsentia — Intelligence That Anticipates.**  
+**Team VYRA**  
+*Know sooner. Understand better. Decide responsibly.*
 
-```bash
-# Deploy to Google Cloud Run
-gcloud run deploy opsentia \
-  --source . \
-  --platform managed \
-  --region us-central1 \
-  --allow-unauthenticated \
-  --set-env-vars GEMINI_API_KEY="your-gemini-api-key"
-```
-
-The container automatically listens on the dynamic `${PORT:-8080}` provided by Cloud Run and serves the static frontend alongside the FastAPI REST API. The `/api/health` endpoint provides health-checking for Cloud Run load balancers.
-
----
-
-## 7. Submission Artifacts & Evidence
-- **Pitch Deck:** [`pitch/Opsentia_Official_Template_Final.pptx`](file:///c:/Users/Ai%20pc/Desktop/opsentia-v2/pitch/Opsentia_Official_Template_Final.pptx)
-- **Demo Video:** [`docs/demo_video/opsentia_demo_walkthrough.webm`](file:///c:/Users/Ai%20pc/Desktop/opsentia-v2/docs/demo_video/opsentia_demo_walkthrough.webm)
-- **Release Gates Acceptance Matrix:** [`qa/RELEASE_GATES.csv`](file:///c:/Users/Ai%20pc/Desktop/opsentia-v2/qa/RELEASE_GATES.csv)
-- **Benchmark & Provenance Report:** [`docs/BENCHMARKS.md`](file:///c:/Users/Ai%20pc/Desktop/opsentia-v2/docs/BENCHMARKS.md)
-- **Authentic Screenshots:** [`docs/screenshots/`](file:///c:/Users/Ai%20pc/Desktop/opsentia-v2/docs/screenshots/) (25 files across 3 viewports)
-- **Release Verification Log:** [`docs/RELEASE_EVIDENCE.md`](file:///c:/Users/Ai%20pc/Desktop/opsentia-v2/docs/RELEASE_EVIDENCE.md)
+</div>
