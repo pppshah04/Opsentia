@@ -22,3 +22,4 @@ legacy_extraction/
 .planning/
 .vscode/
 .idea/
+push_to_github.py
