@@ -144,12 +144,10 @@ COIL analyzes incoming/replayed KPI observations and signals material deviations
 ### 1. Clone and install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/opsentia-ai.git
-cd opsentia-ai
+git clone https://github.com/pppshah04/opsentia
+cd opsentia
 python -m pip install -r requirements.txt
 ```
-
-Replace `YOUR_USERNAME` with your GitHub username and ensure the repository has been created. Alternatively, extract the project ZIP and open a terminal in its root directory.
 
 ### 2. Configure optional Gemini access
 
